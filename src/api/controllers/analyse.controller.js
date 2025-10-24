@@ -22,7 +22,7 @@ async function analyseUrl(req, res, next) {
 
       return res.status(HTTP_STATUS.BAD_REQUEST).json({
         error: validation.error,
-        details: validation.details,
+        message: validation.details,
       });
     }
 
@@ -94,7 +94,6 @@ async function analyseUrl(req, res, next) {
         error: ERROR_MESSAGES.QUEUE_UNAVAILABLE,
         message:
           "Queue system is temporarily unavailable. Please try again later.",
-        timestamp: new Date().toISOString(),
       });
     }
 
@@ -120,14 +119,14 @@ function validateRequest(req, res, next) {
   if (!url) {
     return res.status(HTTP_STATUS.BAD_REQUEST).json({
       error: "URL is required",
-      details: 'Request body must contain a "url" field',
+      message: 'Request body must contain a "url" field',
     });
   }
 
   if (typeof url !== "string") {
     return res.status(HTTP_STATUS.BAD_REQUEST).json({
       error: "Invalid URL type",
-      details: "URL must be a string",
+      message: "URL must be a string",
     });
   }
 
