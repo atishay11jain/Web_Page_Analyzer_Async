@@ -1,0 +1,184 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# IDE - VSCode
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IDE - JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# IDE - Other
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+.jest-cache/
+
+# Build artifacts
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Docker
+.dockerignore
+*.dockerfile.dockerignore
+
+# Redis data
+dump.rdb
+appendonly.aof
+*.rdb
+*.aof
+
+# Process files
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+pids/
+lib-cov/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# TypeScript
+*.tsbuildinfo
+
+# Next.js
+.next/
+next-env.d.ts
+
+# Nuxt.js
+.nuxt
+
+# Gatsby
+.cache/
+public
+
+# Vue
+.vuepress/dist
+
+# Serverless
+.serverless/
+
+# FuseBox
+.fusebox/
+
+# DynamoDB Local
+.dynamodb/
+
+# TernJS
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Temporary folders
+tmp/
+temp/
+
+# Lock files (optional - uncomment if needed)
+# package-lock.json
+# yarn.lock
+
+# Local test files
+test-results/
+playwright-report/
+test-output/
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Miscellaneous
+.npm
+.eslintcache
+.stylelintcache
+.cache
+.sass-cache
+connect.lock
+typings/
+.angular/

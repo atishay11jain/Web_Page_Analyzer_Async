@@ -1,0 +1,38 @@
+# Multi-stage build for Worker
+FROM node:20-alpine AS builder
+
+# Install build dependencies
+RUN apk add --no-cache python3 make g++
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production
+
+# Production stage
+FROM node:20-alpine
+
+# Create app user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+WORKDIR /app
+
+# Copy dependencies from builder
+COPY --from=builder --chown=nodejs:nodejs /app/node_modules ./node_modules
+
+# Copy application code
+COPY --chown=nodejs:nodejs src ./src
+COPY --chown=nodejs:nodejs package*.json ./
+
+# Create logs directory
+RUN mkdir -p logs && chown nodejs:nodejs logs
+
+# Switch to non-root user
+USER nodejs
+
+# Start worker
+CMD ["node", "src/worker/worker.js"]
